@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1;
+namespace WpfApp2;
 
 /// <summary>
 /// Interaction logic for MainWindow.xaml
@@ -20,9 +20,4 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
-}
-
-private void Button_Click(object sender, RoutedEventArgs e)
-{
-    MessageBox.Show("Button was clicked!");
 }
