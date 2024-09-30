@@ -20,5 +20,21 @@ namespace diceroll
         {
             InitializeComponent();
         }
+
+        private void RollDice_Click(object sender, RoutedEventArgs e)
+        {
+            int sides = 6;// int.Parse(diceSidesComboBox.Text);  // ドロップダウンで選ばれた面数
+            int numberOfRolls = 1;// int.Parse(rollCountTextBox.Text);  // 入力されたロールの個数
+            Random random = new Random();
+
+            resultTextBox.Clear();  // 前の結果を消す
+
+            for (int i = 0; i < numberOfRolls; i++) 
+            {
+                int roll = random.Next(1, sides + 1);
+                resultTextBox.AppendText($"Roll {i + 1}: {roll}\n");
+            }
+        }
+
     }
 }
