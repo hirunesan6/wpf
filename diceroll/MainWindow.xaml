@@ -18,9 +18,11 @@
             <ComboBoxItem Content="100" />
         </ComboBox>
 
+        <TextBox x:Name="rollCountTextBox"  Width= "100" Height="30" Margin="250,-200,0,0" />
+
         <Button Content="ダイスロール！" Width="100" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Click="RollDice_Click"/>
 
-        <TextBox x:Name="resultTextBox" Width= "100" Height="30" HorizontalAlignment="Center" Margin="0,200,0,0" />
+        <TextBox x:Name="resultTextBox" Width= "100" Height="50" HorizontalAlignment="Center" Margin="0,200,0,0" />
 
     </Grid>
 </Window>

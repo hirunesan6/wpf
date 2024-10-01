@@ -24,7 +24,7 @@ namespace diceroll
         private void RollDice_Click(object sender, RoutedEventArgs e)
         {
             int sides = int.Parse(diceSidesComboBox.Text);  // ドロップダウンで選ばれた面数
-            int numberOfRolls = 1;// int.Parse(rollCountTextBox.Text);  // 入力されたロールの個数
+            int numberOfRolls = int.Parse(rollCountTextBox.Text);  // 入力されたロールの個数
             Random random = new Random();
 
             resultTextBox.Clear();  // 前の結果を消す
