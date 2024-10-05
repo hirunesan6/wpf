@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{4DA6104D-4FBC-438A-A6C5-5C765CCE7B62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "diceroll", "diceroll\diceroll.csproj", "{B7B8DAD7-F07F-40A0-8EA5-10236477347B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "diceroll", "diceroll\diceroll.csproj", "{B7B8DAD7-F07F-40A0-8EA5-10236477347B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "character_database", "character_database\character_database.csproj", "{60C8C26A-E83F-4119-AB75-3B0D7B12AFFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B7B8DAD7-F07F-40A0-8EA5-10236477347B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7B8DAD7-F07F-40A0-8EA5-10236477347B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7B8DAD7-F07F-40A0-8EA5-10236477347B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60C8C26A-E83F-4119-AB75-3B0D7B12AFFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60C8C26A-E83F-4119-AB75-3B0D7B12AFFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60C8C26A-E83F-4119-AB75-3B0D7B12AFFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60C8C26A-E83F-4119-AB75-3B0D7B12AFFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
