@@ -28,7 +28,6 @@ namespace diceroll
             Random random = new Random();
 
             resultTextBox.Clear();  // 前の結果を消す
-
             int rollsum = 0;
 
             for (int i = 0; i < numberOfRolls; i++) 
