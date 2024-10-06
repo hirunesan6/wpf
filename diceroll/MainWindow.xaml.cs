@@ -29,11 +29,17 @@ namespace diceroll
 
             resultTextBox.Clear();  // 前の結果を消す
 
+            int rollsum = 0;
+
             for (int i = 0; i < numberOfRolls; i++) 
             {
                 int roll = random.Next(1, sides + 1);
                 resultTextBox.AppendText($"Roll {i + 1}: {roll}\n");
+                rollsum = rollsum + roll;
             }
+
+            resultTextBox.AppendText($"sum: {rollsum}\n");
+
         }
 
     }
