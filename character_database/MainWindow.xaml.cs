@@ -14,10 +14,11 @@ public class Character
 {
     public string Name { get; set; }
     public int HP { get; set; }
+    public int Initiative { get; set; }
 
     public override string ToString()
     {
-        return $"{Name} - HP: {HP}";
+        return $"{Name} - HP: {HP} - 行動値: {Initiative}";
     }
 }
 
@@ -43,19 +44,30 @@ namespace character_database
             // 入力された名前とHPを取得
             string name = characterNameTextBox.Text;
             int hp;
+            int initiative;
 
             // HPが数値であるか確認し、キャラクターをリストに追加
             if (int.TryParse(characterHPTextBox.Text, out hp))
             {
-                Character newCharacter = new Character { Name = name, HP = hp };
-                characters.Add(newCharacter);
+                if (int.TryParse(characterInitiativeTextBox.Text, out initiative))
+                {
 
-                // リストボックスに表示を更新
-                characterListBox.Items.Add(newCharacter);
+                    Character newCharacter = new Character { Name = name, HP = hp, Initiative = initiative};
+                    characters.Add(newCharacter);
 
-                // テキストボックスをクリア
-                characterNameTextBox.Clear();
-                characterHPTextBox.Clear();
+                    // リストボックスに表示を更新
+                    characterListBox.Items.Add(newCharacter);
+
+                    // テキストボックスをクリア
+                    characterNameTextBox.Clear();
+                    characterHPTextBox.Clear();
+                    characterInitiativeTextBox.Clear();
+
+                }
+                else
+                {
+                    MessageBox.Show("行動値は数値を入力してください。");
+                }
             }
             else
             {
