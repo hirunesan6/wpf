@@ -8,5 +8,24 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <!-- キャラクター名の入力 -->
+            <TextBlock Text="キャラクター名:" />
+            <TextBox x:Name="characterNameTextBox" Width="200" />
+
+            <!-- キャラクターHPの入力 -->
+            <TextBlock Text="HP:" />
+            <TextBox x:Name="characterHPTextBox" Width="200" />
+
+            <!-- キャラクターデータ追加ボタン -->
+            <Button Content="キャラクターを追加" Width="200" Click="AddCharacter_Click" />
+
+            <!-- キャラクターリストを表示するリストボックス -->
+            <ListBox x:Name="characterListBox" Width="300" Height="200" />
+
+        </StackPanel>
+
+
     </Grid>
 </Window>
