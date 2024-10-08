@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics.Eventing.Reader;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -46,35 +47,75 @@ namespace character_database
             int hp;
             int initiative;
 
-            // HPが数値であるか確認し、キャラクターをリストに追加
-            if (int.TryParse(characterHPTextBox.Text, out hp))
-            {
-                if (int.TryParse(characterInitiativeTextBox.Text, out initiative))
+                // HPが数値であるか確認し、キャラクターをリストに追加
+                if (int.TryParse(characterHPTextBox.Text, out hp))
                 {
+                    if (int.TryParse(characterInitiativeTextBox.Text, out initiative))
+                    {
 
-                    Character newCharacter = new Character { Name = name, HP = hp, Initiative = initiative};
-                    characters.Add(newCharacter);
+                        Character newCharacter = new Character { Name = name, HP = hp, Initiative = initiative };
+                        characters.Add(newCharacter);
 
-                    // リストボックスに表示を更新
-                    characterListBox.Items.Add(newCharacter);
+                        // リストボックスに表示を更新
+                        characterListBox.Items.Add(newCharacter);
 
-                    // テキストボックスをクリア
-                    characterNameTextBox.Clear();
-                    characterHPTextBox.Clear();
-                    characterInitiativeTextBox.Clear();
+                        // テキストボックスをクリア
+                        characterNameTextBox.Clear();
+                        characterHPTextBox.Clear();
+                        characterInitiativeTextBox.Clear();
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("行動値は数値を入力してください。");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("行動値は数値を入力してください。");
+                    MessageBox.Show("HPは数値を入力してください。");
                 }
-            }
-            else
+         }
+
+        // リストボックスでキャラクターを選択した時のイベントハンドラ
+        private void characterListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (characterListBox.SelectedItem != null)
             {
-                MessageBox.Show("HPは数値を入力してください。");
+                Character selectedCharacter = (Character)characterListBox.SelectedItem;
+                characterNameTextBox.Text = selectedCharacter.Name;
+                characterHPTextBox.Text = selectedCharacter.HP.ToString();
+                characterInitiativeTextBox.Text = selectedCharacter.Initiative.ToString();
+            }
+        }
+
+        // 削除ボタンのクリックイベント
+        private void DeleteCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            if (characterListBox.SelectedItem != null)
+            {
+                // リストボックスから選択されたキャラクターを削除
+                characters.Remove((Character)characterListBox.SelectedItem);
+                characterListBox.Items.Refresh(); // リストを更新して反映
+            }
+        }
+
+        // 編集ボタンのクリックイベント
+        private void EditCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            if (characterListBox.SelectedItem != null)
+            {
+                Character selectedCharacter = (Character)characterListBox.SelectedItem;
+                selectedCharacter.Name = characterNameTextBox.Text;
+                selectedCharacter.HP = int.Parse(characterHPTextBox.Text);
+                selectedCharacter.Initiative = int.Parse(characterInitiativeTextBox.Text);
+
+                characterListBox.Items.Refresh(); // 更新されたデータを表示
             }
         }
 
 
-        }
+
     }
+
+
+}
